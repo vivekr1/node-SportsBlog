@@ -1,0 +1,19 @@
+extend layout
+
+block content
+    .container
+        .row
+            .col-xs-9.col-sm-9.col-md-9.col-lg-9
+                h1  #{title}
+            .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                a( class="btn btn-light create-btn" href="/manage/categories/add") Add Category
+        != messages()
+        table.table.table-striped
+            tr
+                th Category Title
+                th
+            each category, i in categories
+                tr
+                    td  #{category.title}
+                    td
+                        a.btn.btn-tiny.btn-default(href='categories/edit/'+ category._id, title='EDIT')  EDIT

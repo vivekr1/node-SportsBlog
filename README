@@ -1,0 +1,39 @@
+sudo service docker start
+sudo docker run -p 27017:27017 mongo
+
+sudo docker container ls
+sudo docker exec -it <container id>  bash
+
+
+------------------
+
+
+use sportsblog
+db.createCollection('categories')
+db.createCollection('articles')
+
+db.categories.insert({title:'Baseball', 'description': 'these are baseball articles'})
+db.categories.insert({title:'Basketball', 'description': 'these are Basketball articles'})
+db.categories.insert({title:'Hockey', 'description': 'these are hockey articles'})
+db.categories.insert({title:'Football', 'description': 'these are football articles'})
+
+------------------------------------------------------------------
+
+[
+  {
+    "title": "Baseball",
+    "description": "these are baseball articles"
+  },
+  {
+    "title": "Basketball",
+    "description": "these are Basketball articles"
+  },
+  {
+    "title": "Hockey",
+    "description": "these are hockey articles"
+  },
+  {
+    "title": "Football",
+    "description": "these are football articles"
+  }
+]
